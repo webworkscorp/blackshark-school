@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Users, Shield } from 'lucide-react';
-import { useLanguage } from '../App';
+import { useLanguage } from '../constants.tsx';
 
 const About: React.FC = () => {
   const { t } = useLanguage();

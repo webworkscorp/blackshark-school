@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useLanguage } from '../App';
+import { useLanguage } from '../constants.tsx';
 
 const Process: React.FC = () => {
   const { t, lang } = useLanguage();

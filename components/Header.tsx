@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
-import { useLanguage } from '../App';
+import { Menu, X } from 'lucide-react';
+import { useLanguage } from '../constants.tsx';
 
 const Header: React.FC = () => {
   const { lang, setLang, t } = useLanguage();
@@ -43,7 +43,6 @@ const Header: React.FC = () => {
               </a>
             ))}
             
-            {/* Language Switcher Desktop */}
             <div className="flex items-center border-l border-white/20 pl-6 gap-3">
               <button 
                 onClick={() => setLang('es')}
@@ -69,7 +68,6 @@ const Header: React.FC = () => {
           </div>
 
           <div className="md:hidden flex items-center gap-4">
-             {/* Language Switcher Mobile Quick Access */}
              <div className="flex items-center bg-white/5 rounded-full px-4 py-2 gap-3 mr-2">
                 <button 
                   onClick={() => setLang('es')}

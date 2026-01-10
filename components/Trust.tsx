@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { CheckCircle, ShieldCheck } from 'lucide-react';
-import { useLanguage } from '../App';
+import { useLanguage } from '../constants.tsx';
 
 const Trust: React.FC = () => {
   const { t } = useLanguage();

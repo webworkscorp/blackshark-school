@@ -1,8 +1,7 @@
 
 import React, { useState, useRef } from 'react';
 import { Send, User, Waves, AlignLeft, CheckCircle2 } from 'lucide-react';
-import { BRAND } from '../constants';
-import { useLanguage } from '../App';
+import { BRAND, useLanguage } from '../constants.tsx';
 
 const BookingForm: React.FC = () => {
   const { t, lang } = useLanguage();

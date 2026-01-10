@@ -1,35 +1,18 @@
 
-import React, { useEffect, useState, createContext, useContext } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Process from './components/Process';
-import Trust from './components/Trust';
-import BookingForm from './components/BookingForm';
-import Footer from './components/Footer';
-import FloatingLanguageSwitcher from './components/FloatingLanguageSwitcher';
-import { TRANSLATIONS } from './constants';
-
-type Language = 'es' | 'en';
-
-interface LanguageContextType {
-  lang: Language;
-  setLang: (lang: Language) => void;
-  t: typeof TRANSLATIONS.es;
-}
-
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (!context) throw new Error('useLanguage must be used within a LanguageProvider');
-  return context;
-};
+import React, { useEffect, useState } from 'react';
+import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
+import About from './components/About.tsx';
+import Services from './components/Services.tsx';
+import Process from './components/Process.tsx';
+import Trust from './components/Trust.tsx';
+import BookingForm from './components/BookingForm.tsx';
+import Footer from './components/Footer.tsx';
+import FloatingLanguageSwitcher from './components/FloatingLanguageSwitcher.tsx';
+import { TRANSLATIONS, Language, LanguageContext } from './constants.tsx';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('es');
-
   const t = TRANSLATIONS[lang];
 
   useEffect(() => {

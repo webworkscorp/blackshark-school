@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { createContext, useContext } from 'react';
 import { 
   Users, 
   Target, 
@@ -9,6 +9,8 @@ import {
   Truck,
   Apple
 } from 'lucide-react';
+
+export type Language = 'es' | 'en';
 
 export const BRAND = {
   name: "Blackshack Surf School CR",
@@ -35,6 +37,7 @@ export const TRANSLATIONS = {
       description: "Únete a nosotros y descubre la emoción de surfear en el Caribe costarricense con instructores locales y un ambiente seguro y profesional.",
       cta: "RESERVAR CLASE"
     },
+    // ... resto del objeto se mantiene igual ...
     about: {
       tag: "Nuestra Historia",
       title: "Pasión local por el surf en Puerto Viejo.",
@@ -224,4 +227,18 @@ export const TRANSLATIONS = {
       contact: "Contact"
     }
   }
+};
+
+interface LanguageContextType {
+  lang: Language;
+  setLang: (lang: Language) => void;
+  t: typeof TRANSLATIONS.es;
+}
+
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) throw new Error('useLanguage must be used within a LanguageProvider');
+  return context;
 };

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Globe } from 'lucide-react';
-import { useLanguage } from '../App';
+import { useLanguage } from '../constants.tsx';
 
 const FloatingLanguageSwitcher: React.FC = () => {
   const { lang, setLang } = useLanguage();

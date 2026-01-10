@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { Facebook, MapPin, Phone, Instagram } from 'lucide-react';
-import { BRAND } from '../constants';
-import { useLanguage } from '../App';
+import { BRAND, useLanguage } from '../constants.tsx';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
