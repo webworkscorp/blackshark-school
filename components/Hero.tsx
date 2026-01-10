@@ -19,16 +19,9 @@ const Hero: React.FC = () => {
           loop
           playsInline
           className="w-full h-full object-cover opacity-60 scale-105"
-          poster="https://i.imgur.com/1xHda8B.jpeg"
         >
           <source src={videoUrl} type="video/quicktime" />
           <source src={videoUrl} type="video/mp4" />
-          {/* Fallback image if video fails or is not supported */}
-          <img
-            src="https://i.imgur.com/1xHda8B.jpeg"
-            alt="Blackshack Professional Surf Academy"
-            className="w-full h-full object-cover"
-          />
         </video>
         {/* Overlay para profundidad y legibilidad */}
         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-brand-dark/20"></div>
