@@ -30,7 +30,7 @@ const About: React.FC = () => {
 
           <div className="lg:col-span-7 grid md:grid-cols-2 gap-4">
             <div className="space-y-4">
-              <img src="https://i.imgur.com/xwEkUc7.jpeg" alt="Surf" className="w-full h-80 object-cover" />
+              <img src="https://i.imgur.com/XuYbhTV.jpeg" alt="Surf Action Pro" className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-700 shadow-xl" />
               <div className="p-8 border border-gray-100">
                 <Users className="text-brand-teal mb-4" size={32} />
                 <h3 className="text-xl font-bold mb-2">{t.about.features[0].title}</h3>
@@ -43,7 +43,7 @@ const About: React.FC = () => {
                 <h3 className="text-xl font-bold mb-2">{t.about.features[1].title}</h3>
                 <p className="text-gray-500 text-sm">{t.about.features[1].desc}</p>
               </div>
-              <img src="https://i.imgur.com/rYhdib6.jpeg" alt="Professional surf" className="w-full h-80 object-cover" />
+              <img src="https://i.imgur.com/jvCWANm.jpeg" alt="Professional surf action" className="w-full h-80 object-cover shadow-xl" />
             </div>
           </div>
         </div>

@@ -1,9 +1,13 @@
 
 import React from 'react';
 import { useLanguage } from '../constants.tsx';
+import { Play } from 'lucide-react';
 
 const Services: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  
+  const exampleVideoUrl = "https://mqajxigehitkgdtepqzi.supabase.co/storage/v1/object/public/Video%20surf/48cb0426-fc19-4920-995a-0cd8603f8f76.mov";
+
   return (
     <section id="services" className="py-32 bg-brand-gray border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -29,6 +33,40 @@ const Services: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Galería Visual con Video de Ejemplo Estratégico */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+            <div className="relative overflow-hidden group h-[450px] md:h-72">
+                <img src="https://i.imgur.com/v0QXl3G.jpeg" alt="Surf Action 1" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors"></div>
+            </div>
+            
+            {/* Video de Ejemplo - Posición Central Estratégica */}
+            <div className="relative overflow-hidden group h-[450px] md:h-72 shadow-2xl border-4 border-white">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                >
+                  <source src={exampleVideoUrl} type="video/quicktime" />
+                  <source src={exampleVideoUrl} type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent opacity-60 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute bottom-4 left-4 z-10">
+                  <span className="bg-brand-light text-brand-dark text-[9px] font-black uppercase tracking-[0.2em] px-3 py-1.5 flex items-center gap-2">
+                    <Play size={10} fill="currentColor" />
+                    {lang === 'es' ? 'Ejemplo de Clase' : 'Session Example'}
+                  </span>
+                </div>
+            </div>
+
+            <div className="relative overflow-hidden group h-[450px] md:h-72">
+                <img src="https://i.imgur.com/63IhmRS.jpeg" alt="Surf Class 3" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors"></div>
+            </div>
         </div>
 
         <div className="bg-white p-10 mb-20 border border-gray-100 flex flex-wrap justify-center gap-12">

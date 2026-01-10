@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle, ShieldCheck } from 'lucide-react';
+import { CheckCircle, ShieldCheck, Quote } from 'lucide-react';
 import { useLanguage } from '../constants.tsx';
 
 const Trust: React.FC = () => {
@@ -8,7 +8,7 @@ const Trust: React.FC = () => {
   return (
     <section id="trust" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div className="order-2 lg:order-1">
             <h2 className="text-4xl md:text-5xl font-display font-black text-brand-dark mb-8">
               {t.trust.title}
@@ -30,9 +30,20 @@ const Trust: React.FC = () => {
             </div>
           </div>
           <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-            <img src="https://i.imgur.com/9DO24IP.jpeg" alt="Surf" className="rounded-3xl w-full h-full object-cover aspect-square shadow-lg" />
-            <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&q=80&w=600" alt="Surf" className="rounded-3xl w-full h-full object-cover aspect-square mt-8 shadow-lg" />
+            <img src="https://i.imgur.com/44U7b4h.jpeg" alt="Professional Surf Action" className="rounded-3xl w-full h-full object-cover aspect-square shadow-lg hover:scale-[1.02] transition-transform duration-500" />
+            <img src="https://i.imgur.com/63IhmRS.jpeg" alt="Surfer in action" className="rounded-3xl w-full h-full object-cover aspect-square mt-8 shadow-lg hover:scale-[1.02] transition-transform duration-500" />
           </div>
+        </div>
+
+        {/* Testimonials Section */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {t.trust.testimonials.map((test, i) => (
+            <div key={i} className="bg-brand-gray p-8 relative group hover:bg-brand-dark transition-all duration-500">
+              <Quote className="text-brand-teal mb-6 group-hover:text-white" size={40} />
+              <p className="text-gray-600 group-hover:text-gray-300 italic mb-8 font-light leading-relaxed">"{test.text}"</p>
+              <p className="text-brand-dark group-hover:text-brand-light font-black uppercase text-xs tracking-widest">– {test.author}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

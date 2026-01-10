@@ -7,17 +7,21 @@ import {
   BookOpen,
   Waves,
   Truck,
-  Apple
+  Apple,
+  MapPin,
+  Clock,
+  Mail
 } from 'lucide-react';
 
 export type Language = 'es' | 'en';
 
 export const BRAND = {
   name: "Blackshack Surf School CR",
-  location: "Puerto Viejo, Limón – Costa Rica",
+  location: "Playa Cocles, Puerto Viejo, Limón, Costa Rica 70403",
   whatsapp: "https://wa.me/50671069930",
   whatsappNumber: "+506 7106 9930",
-  facebook: "Blackshack Surf School",
+  email: "info@blackshacksurfschool.com",
+  hours: "7:00 am - 5:00 pm",
   facebookUrl: "https://www.facebook.com/share/1AVTfrWCW2/?mibextid=wwXIfr",
   instagram: "@blackshack_surf_school.cr",
   instagramUrl: "https://instagram.com/blackshack_surf_school.cr"
@@ -26,86 +30,90 @@ export const BRAND = {
 export const TRANSLATIONS = {
   es: {
     nav: [
-      { label: 'Nosotros', href: '#about' },
-      { label: 'Clases y Precios', href: '#services' },
-      { label: 'Cómo funciona', href: '#process' },
+      { label: 'Sobre Ronald', href: '#about' },
+      { label: 'Clases y Playas', href: '#services' },
+      { label: 'Testimonios', href: '#trust' },
       { label: 'Reservar', href: '#booking' },
     ],
     hero: {
       title: "BIENVENIDO A VIVIR EL",
       titleAccent: "REGALO DEL SURF.",
-      description: "Únete a nosotros y descubre la emoción de surfear en el Caribe costarricense con instructores locales y un ambiente seguro y profesional.",
+      description: "Instrucción técnica y experiencia cultural con surfistas locales de tercera generación en el Caribe sur de Costa Rica.",
       cta: "RESERVAR CLASE"
     },
-    // ... resto del objeto se mantiene igual ...
     about: {
-      tag: "Nuestra Historia",
-      title: "Pasión local por el surf en Puerto Viejo.",
-      description: "Somos surfistas locales que amamos lo que hacemos. Nuestra meta es que aprendas a surfear de forma divertida, segura y sin complicaciones. No importa tu edad o nivel, aquí te acompañamos paso a paso.",
+      tag: "Sobre la Escuela",
+      title: "Ronald Brown: Pasión, Herencia y Técnica.",
+      description: "Blackshack es una escuela profesional dirigida por Ronald Brown, nativo de Puerto Viejo con más de 25 años de experiencia. Surfista de tercera generación, Ronald ha surfeado olas en México, Perú, Hawái y Tahití, aportando un conocimiento profundo del mar caribeño y un enfoque humano y respetuoso del entorno.",
       stats: [
-        { value: "12+", label: "Años surfeando" },
-        { value: "100%", label: "Comprometidos" }
+        { value: "25+", label: "Años de experiencia" },
+        { value: "3ra", label: "Generación surfista" }
       ],
       features: [
-        { title: "Pura Vida", desc: "Disfrutamos cada clase como si fuera la primera. El buen ambiente es prioridad." },
-        { title: "Seguridad", desc: "Conocemos las corrientes y el mar local para que solo te preocupes de disfrutar." }
+        { title: "Filosofía", desc: "Instrucción personalizada de bienestar y conexión con la naturaleza." },
+        { title: "Local", desc: "Profundo conocimiento de corrientes y la cultura de Puerto Viejo." }
       ]
     },
     services: {
-      tag: "Nuestras Clases",
-      title: "Planes y Precios",
-      description: "Todo lo que necesitas para surfear está incluido. Solo trae tu protector solar y ganas de aprender.",
+      tag: "Nuestras Playas",
+      title: "Planes y Spots",
+      description: "Lecciones en Playa Cocles, Playa Grande, Punta Uva y Playa Negra según condiciones. No es necesario saber nadar para principiantes. Máximo 3 estudiantes por instructor.",
       pricing: [
         { duration: "Sesión de 1h 30min", price: "$55", tag: "Opción Recomendada" },
         { duration: "Sesión de 2h", price: "$60", tag: "Más popular" }
       ],
       inclusions: [
-        { label: "Tabla y Licra", icon: <Waves size={18} /> },
-        { label: "Transporte local", icon: <Truck size={18} /> },
-        { label: "Frutas de temporada", icon: <Apple size={18} /> }
+        { label: "Tabla y Leash", icon: <Waves size={18} /> },
+        { label: "Instrucción Técnica", icon: <Award size={18} /> },
+        { label: "Transporte Cercano", icon: <Truck size={18} /> }
       ],
       items: [
         {
           name: "Principiantes",
-          description: "Ideal para tu primera vez. Aprende lo básico, seguridad en el agua y ponte de pie en tu primera clase.",
+          description: "No necesitas saber nadar. Te enseñamos seguridad, técnica en arena y te ponemos de pie en tu primera sesión.",
           icon: <BookOpen className="w-8 h-8" />
         },
         {
           name: "Intermedios",
-          description: "Mejora tu técnica, aprende a leer mejor las olas y gana confianza en olas más grandes.",
+          description: "Mejora tu lectura de olas y técnica de remada con un guía que ha viajado por las mejores olas del mundo.",
           icon: <Target className="w-8 h-8" />
         },
         {
-          name: "Grupos y Amigos",
-          description: "Ven con tus amigos o familia. Una experiencia divertida y segura para compartir en el mar.",
+          name: "Grupos Grandes",
+          description: "Capacidad para grupos de hasta 20 personas, manteniendo la calidad con múltiples instructores locales.",
           icon: <Users className="w-8 h-8" />
         },
         {
-          name: "Clase Privada",
-          description: "Atención exclusiva 1 a 1 para avanzar mucho más rápido y con total dedicación.",
+          name: "Privadas",
+          description: "Atención 1 a 1 con Ronald o nuestro equipo senior para una progresión acelerada y segura.",
           icon: <Award className="w-8 h-8" />
         }
       ]
     },
     process: {
       steps: [
-        { step: "01", title: "Reserva", text: "Escríbenos por WhatsApp para elegir el mejor día y hora según el mar." },
-        { step: "02", title: "Encuentro", text: "Te recogemos o nos vemos en el spot con todo el equipo listo para ti." },
-        { step: "03", title: "Al Agua", text: "Explicación rápida en la arena y vamos directo al mar a surfear." },
-        { step: "04", title: "Disfruta", text: "Surfea tus olas y llévate una experiencia increíble de Puerto Viejo." }
+        { step: "01", title: "Contacto", text: "WhatsApp o Email. Abierto todos los días de 7:00 am a 5:00 pm." },
+        { step: "02", title: "Logística", text: "Elegimos la playa (Cocles, Punta Uva...) según el mar y tu nivel." },
+        { step: "03", title: "Transporte", text: "Coordinamos tu recogida en hoteles cercanos para tu comodidad." },
+        { step: "04", title: "Conexión", text: "Surfea bajo una filosofía de bienestar y respeto por el océano." }
       ]
     },
     trust: {
       title: "Por qué elegir Blackshack",
       points: [
-        "Instructores locales que conocen bien el mar",
-        "Equipo de buena calidad siempre incluido",
-        "Ambiente relajado y seguro para todos",
-        "Buscamos la mejor playa según el día",
-        "Atención amable y personalizada"
+        "Liderada por Ronald Brown, surfista de élite nativo",
+        "Enfoque en seguridad y cultura local caribeña",
+        "Instructores certificados (máx 3 alumnos/guía)",
+        "Equipo profesional (tabla y leash incluidos)",
+        "Comunicación excelente en español e inglés"
       ],
-      badgeTitle: "Seguridad Garantizada",
-      badgeDesc: "Protocolos de seguridad certificados para todas las edades."
+      badgeTitle: "Instrucción Profesional",
+      badgeDesc: "Más de 25 años de experiencia técnica en el agua.",
+      testimonials: [
+        { author: "Edgar Arias", text: "Profesional y comprometido con los estudiantes. Muy recomendable." },
+        { author: "Birgit S.", text: "Me ayudó a mejorar mis habilidades y volveré el próximo año." },
+        { author: "Christine Ha", text: "Reconfortante para principiantes, comunicación excelente en inglés." }
+      ]
     },
     booking: {
       tag: "Reserva tu sesión",
@@ -114,7 +122,7 @@ export const TRANSLATIONS = {
       labelLevel: "Nivel",
       labelDetails: "Detalles breves",
       placeholderName: "Escribe tu nombre",
-      placeholderDetails: "Cuéntanos cuántos son...",
+      placeholderDetails: "Dinos cuántos son y en qué hotel se hospedan...",
       levels: ["Principiante", "Intermedio", "Avanzado"],
       cta: "ENVIAR RESERVA",
       successTitle: "¡Casi listo!",
@@ -122,91 +130,96 @@ export const TRANSLATIONS = {
       back: "VOLVER AL FORMULARIO"
     },
     footer: {
-      desc: "Vive tu primera ola en Puerto Viejo con una experiencia real, segura y guiada por surfistas locales.",
-      contact: "Contacto"
+      desc: "Blackshack Surf School: Instrucción técnica, experiencia cultural y conexión con el océano en Puerto Viejo.",
+      contact: "Contacto & Horarios"
     }
   },
   en: {
     nav: [
-      { label: 'About', href: '#about' },
-      { label: 'Classes & Rates', href: '#services' },
-      { label: 'How it works', href: '#process' },
+      { label: 'About Ronald', href: '#about' },
+      { label: 'Classes & Spots', href: '#services' },
+      { label: 'Testimonials', href: '#trust' },
       { label: 'Book now', href: '#booking' },
     ],
     hero: {
       title: "WELCOME TO THE",
       titleAccent: "GIFT OF SURFING.",
-      description: "Join us and discover the thrill of surfing in the Costa Rican Caribbean with local instructors in a safe and professional environment.",
+      description: "Technical instruction and cultural experience with 3rd generation local surfers in the South Caribbean of Costa Rica.",
       cta: "BOOK A LESSON"
     },
     about: {
-      tag: "Our Story",
-      title: "Local passion for surfing in Puerto Viejo.",
-      description: "We are local surfers who love what we do. Our goal is for you to learn to surf in a fun, safe, and hassle-free way. No matter your age or level, we're with you every step of the way.",
+      tag: "About the School",
+      title: "Ronald Brown: Passion, Heritage & Technique.",
+      description: "Blackshack is a professional school led by Ronald Brown, a Puerto Viejo native with 25+ years of experience. A 3rd generation surfer, Ronald has surfed waves in Mexico, Peru, Hawaii, and Tahiti, bringing deep knowledge of the Caribbean sea and a human-centered, respectful approach to the environment.",
       stats: [
-        { value: "12+", label: "Years surfing" },
-        { value: "100%", label: "Committed" }
+        { value: "25+", label: "Years of Experience" },
+        { value: "3rd", label: "Gen Surfer" }
       ],
       features: [
-        { title: "Pura Vida", desc: "We enjoy every class like it's the first. A great atmosphere is our priority." },
-        { title: "Safety", desc: "We know the local currents and sea so you only have to worry about enjoying yourself." }
+        { title: "Philosophy", desc: "Personalized instruction focusing on wellness and nature connection." },
+        { title: "Local", desc: "Deep knowledge of local currents and Puerto Viejo culture." }
       ]
     },
     services: {
-      tag: "Our Lessons",
-      title: "Plans & Pricing",
-      description: "Everything you need to surf is included. Just bring your sunscreen and willingness to learn.",
+      tag: "Our Beaches",
+      title: "Plans & Spots",
+      description: "Lessons at Playa Cocles, Playa Grande, Punta Uva, and Playa Negra depending on conditions. Swimming skills not required for beginners. Max 3 students per instructor.",
       pricing: [
         { duration: "1h 30min Session", price: "$55", tag: "Recommended Option" },
         { duration: "2h Session", price: "$60", tag: "Most popular" }
       ],
       inclusions: [
-        { label: "Board & Lycra", icon: <Waves size={18} /> },
-        { label: "Local Transport", icon: <Truck size={18} /> },
-        { label: "Seasonal Fruits", icon: <Apple size={18} /> }
+        { label: "Board & Leash", icon: <Waves size={18} /> },
+        { label: "Tech Instruction", icon: <Award size={18} /> },
+        { label: "Nearby Transport", icon: <Truck size={18} /> }
       ],
       items: [
         {
           name: "Beginners",
-          description: "Ideal for your first time. Learn the basics, water safety, and stand up on your very first lesson.",
+          description: "No swimming skills required. We teach safety, sand technique, and get you standing on your first session.",
           icon: <BookOpen className="w-8 h-8" />
         },
         {
           name: "Intermediates",
-          description: "Improve your technique, learn to read waves better, and gain confidence in larger swells.",
+          description: "Improve your wave reading and paddling technique with a guide who has traveled the world's best waves.",
           icon: <Target className="w-8 h-8" />
         },
         {
-          name: "Groups & Friends",
-          description: "Come with friends or family. A fun and safe experience to share in the sea.",
+          name: "Large Groups",
+          description: "Capacity for groups up to 20 people, maintaining quality with multiple local instructors.",
           icon: <Users className="w-8 h-8" />
         },
         {
-          name: "Private Lesson",
-          description: "Exclusive 1-on-1 attention to advance much faster with total dedication.",
+          name: "Private Lessons",
+          description: "1-on-1 attention with Ronald or our senior team for fast and safe progression.",
           icon: <Award className="w-8 h-8" />
         }
       ]
     },
     process: {
       steps: [
-        { step: "01", title: "Booking", text: "Write to us on WhatsApp to choose the best day and time according to the sea." },
-        { step: "02", title: "Meetup", text: "We pick you up or meet at the spot with all the equipment ready for you." },
-        { step: "03", title: "To the Water", text: "Quick briefing on the sand and then straight into the sea to surf." },
-        { step: "04", title: "Enjoy", text: "Surf your waves and take home an incredible Puerto Viejo experience." }
+        { step: "01", title: "Contact", text: "WhatsApp or Email. Open daily from 7:00 am to 5:00 pm." },
+        { step: "02", title: "Logistics", text: "We pick the spot (Cocles, Punta Uva...) based on conditions and your level." },
+        { step: "03", title: "Transport", text: "We coordinate pickup at nearby hotels for your convenience." },
+        { step: "04", title: "Connection", text: "Surf under a philosophy of wellness and respect for the ocean." }
       ]
     },
     trust: {
       title: "Why choose Blackshack",
       points: [
-        "Local instructors who know the sea well",
-        "High-quality equipment always included",
-        "Relaxed and safe environment for everyone",
-        "We find the best beach based on the day",
-        "Friendly and personalized attention"
+        "Led by Ronald Brown, elite native surfer",
+        "Focus on safety and local Caribbean culture",
+        "Certified instructors (max 3 students/guide)",
+        "Professional gear (board and leash included)",
+        "Excellent communication in Spanish and English"
       ],
-      badgeTitle: "Guaranteed Safety",
-      badgeDesc: "Certified safety protocols for all ages."
+      badgeTitle: "Professional Coaching",
+      badgeDesc: "Over 25 years of technical experience in the water.",
+      testimonials: [
+        { author: "Edgar Arias", text: "Professional and committed to students. Highly recommended." },
+        { author: "Birgit S.", text: "He helped me improve my skills and I will return next year." },
+        { author: "Christine Ha", text: "Reassuring for beginners, excellent communication in English." }
+      ]
     },
     booking: {
       tag: "Book your session",
@@ -215,7 +228,7 @@ export const TRANSLATIONS = {
       labelLevel: "Level",
       labelDetails: "Short details",
       placeholderName: "Enter your name",
-      placeholderDetails: "Tell us how many people...",
+      placeholderDetails: "Tell us group size and where you are staying...",
       levels: ["Beginner", "Intermediate", "Advanced"],
       cta: "SEND BOOKING",
       successTitle: "Almost ready!",
@@ -223,8 +236,8 @@ export const TRANSLATIONS = {
       back: "BACK TO FORM"
     },
     footer: {
-      desc: "Experience your first wave in Puerto Viejo with a real, safe experience guided by local surfers.",
-      contact: "Contact"
+      desc: "Blackshack Surf School: Technical instruction, cultural experience, and connection with the ocean in Puerto Viejo.",
+      contact: "Contact & Hours"
     }
   }
 };
